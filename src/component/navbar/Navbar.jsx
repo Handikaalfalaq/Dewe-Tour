@@ -11,7 +11,7 @@ function Navbars() {
     <img className="imagenavbar" src={Wallpaper} alt='logo'/>
     <Navbar collapseOnSelect expand="lg" style={{padding:'0px'}}>
       <Container>
-      <Navbar.Brand href="#home" style={{padding:'0px'}}><img src={Icon} alt="icon" style={{height:'70px'}} /></Navbar.Brand>
+      <Navbar.Brand href="#home" style={{padding:'0px'}}><img src={Icon} alt="icon" style={{height:'68px'}} /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
