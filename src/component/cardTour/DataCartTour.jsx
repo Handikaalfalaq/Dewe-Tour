@@ -1,8 +1,8 @@
-import australia from '../img/australia.png'
+import FolderImage from '../img/FolderImg'
 
 const DataCartTour = [
     {
-        Image : australia,
+        Image : FolderImage.Australia,
         Time: "6D/4D",
         Destination: "Fun Tassie Vacation",
         Country : "australia",
@@ -10,7 +10,7 @@ const DataCartTour = [
         Date: "10/15"
     },
     {
-        Image : australia,
+        Image : FolderImage.Australia,
         Time: "6D/4D",
         Destination: "Fun Tassie Vacation",
         Country : "australia",
@@ -18,7 +18,7 @@ const DataCartTour = [
         Date: "10/15"
     },
     {
-        Image : australia,
+        Image : FolderImage.Australia,
         Time: "6D/4D",
         Destination: "Fun Tassie Vacation",
         Country : "australia",
@@ -26,7 +26,7 @@ const DataCartTour = [
         Date: "10/15"
     },
     {
-        Image : australia,
+        Image : FolderImage.Australia,
         Time: "6D/4D",
         Destination: "Fun Tassie Vacation",
         Country : "australia",
@@ -34,7 +34,7 @@ const DataCartTour = [
         Date: "10/15"
     },
     {
-        Image : australia,
+        Image : FolderImage.Australia,
         Time: "6D/4D",
         Destination: "Fun Tassie Vacation",
         Country : "australia",
@@ -42,7 +42,7 @@ const DataCartTour = [
         Date: "10/15"
     },
     {
-        Image : australia,
+        Image : FolderImage.Australia,
         Time: "6D/4D",
         Destination: "Fun Tassie Vacation",
         Country : "australia",
