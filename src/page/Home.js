@@ -23,4 +23,3 @@ function Home() {
   }
   
   export default Home;
-  // <div style={{backgroundColor:"#E5E5E5"}}></div>

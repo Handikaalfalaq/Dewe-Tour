@@ -4,7 +4,7 @@ import FolderImage from '../img/FolderImg';
 
 function FormRegister() {
   return (
-    <Form style={{width:'496px', height:'596px', overflow:'scroll', fontWeight:'bold', padding:'0px 33px', position:'relative'}}>
+    <Form style={{width:'500px', backgroundColor:'white', height:'596px', overflow:'scroll', fontWeight:'bold', padding:'0px 33px', position:'relative', borderRadius:'10px'}}>
         <img src={FolderImage.Palm} alt="palm" style={{position:'absolute', left:'0px'}}/>
         <img src={FolderImage.Hibiscus} alt="hibiscus" style={{position:'absolute', right:'0px'}}/>
         <p style={{margin:'51px 0px 75px', textAlign:'center', fontSize:'36px'}}>Register</p>
@@ -27,10 +27,6 @@ function FormRegister() {
             <Form.Control type="text" placeholder="Enter Phone" />
         </Form.Group>
         <Button variant="primary" type="submit" style={{backgroundColor:'#FFAF00', border:'0px', width:'100%', marginBottom:'10px'}}>Register</Button>
-
-        <div style={{textAlign:'center'}}>Already have an account ? klik
-            <button style={{border:'0px', backgroundColor:'transparent'}}>Here</button>
-        </div>
     </Form>
   );
 }

@@ -12,6 +12,7 @@ import LeafLanding from './leafLanding.png';
 import Login from './Login.png';
 import Meal from './meal.png';
 import Minus from './Minus.png';
+import Nota from './Nota.png'
 import Palm from './palm.png';
 import PalmLanding from './palmLanding.png';
 import Plane from './plane.png';
@@ -36,6 +37,7 @@ const FolderImage = {
   Login,
   Meal,
   Minus,
+  Nota,
   Palm,
   PalmLanding,
   Plane,
