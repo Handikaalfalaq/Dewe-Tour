@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import FolderImage from '../img/FolderImg';
 import './formRegister.css'
 
-function FormRegister() {
+function FormRegister({openLogin}) {
   return (
     <Form className='containerRegister'>
         <img src={FolderImage.Palm} alt="palm" style={{position:'absolute', left:'0px'}}/>
@@ -28,6 +28,13 @@ function FormRegister() {
             <Form.Control type="text" placeholder="Enter Phone" />
         </Form.Group>
         <Button variant="primary" type="submit" style={{backgroundColor:'#FFAF00', border:'0px', width:'100%', marginBottom:'10px'}}>Register</Button>
+
+        <div style={{textAlign:'center', fontWeight:'500'}}>Already have an account ? klik
+            <button style={{border:'0px', backgroundColor:'transparent', fontWeight:'bold'}} onClick={(e) => {
+              e.preventDefault()
+              openLogin()
+            }}>Here</button>
+        </div>
     </Form>
   );
 }

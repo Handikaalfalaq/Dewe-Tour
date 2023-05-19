@@ -2,9 +2,9 @@
     width:500px;
     background-color: white;
     height : 596px;
-    overflow:scroll; 
+    overflow:auto; 
     font-weight:bold; 
-    padding:0px 33px; 
+    padding:0px 33px 30px; 
     position:relative; 
     border-radius:10px;
     

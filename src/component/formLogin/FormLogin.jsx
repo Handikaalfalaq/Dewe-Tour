@@ -26,8 +26,8 @@ function FormLogin({getDatas, openRegister}) {
         </Form.Group>
         <Button variant="primary" type="submit" style={{backgroundColor:'#FFAF00', border:'0px', width:'100%', marginBottom:'10px'}} >Login</Button>
 
-        <div style={{textAlign:'center'}}>Don't have an account ? klik
-            <button style={{border:'0px', backgroundColor:'transparent'}} onClick={(e) => {
+        <div style={{textAlign:'center', fontWeight:'500'}}>Don't have an account ? klik
+            <button style={{border:'0px', backgroundColor:'transparent', fontWeight:'bold'}} onClick={(e) => {
               e.preventDefault()
               openRegister()
             }}>Here</button>

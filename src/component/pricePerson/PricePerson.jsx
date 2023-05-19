@@ -1,10 +1,12 @@
 import React, {useState , useEffect} from 'react'
 import FolderImage from '../img/FolderImg'
 import './pricePerson.css'
+import { useNavigate} from 'react-router-dom';
 
 
 function PricePerson() {
-    const [calculation, setCalculation] = useState(1);
+  const navigate = useNavigate()
+  const [calculation, setCalculation] = useState(1);
   const [total, setTotal] = useState(12398000);
 
   const handlePlusClick = () => {
@@ -39,7 +41,9 @@ function PricePerson() {
                 <div>IDR.{total.toLocaleString()}</div>
             </div>
             <div style={{display:'flex', justifyContent: 'flex-end'}}>
-                <button className='buttonBooking'>BOOK NOW</button>
+                <button className='buttonBooking' onClick={(e) => {
+                  navigate('/Payment')
+                }}>BOOK NOW</button>
             </div>
         </div>
     )

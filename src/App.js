@@ -19,6 +19,7 @@ function App() {
           <Route exact path="/Profile" element={<Profile/>} />
           <Route exact path="/DropDown" element={<DropDown/>} />
           <Route exact path="/PopUp" element={<PopUp/>} />
+          
         </Routes>
       </Router>
     </>
