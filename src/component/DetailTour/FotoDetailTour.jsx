@@ -1,18 +1,30 @@
 import { Card } from "react-bootstrap"
-import Australia from "../img/australia.png"
+import DataTour from "./DataTour"
+import './fotoTour.css'
+const dataHidden = DataTour.length - 4;
 
 function FotoTour (){
     return(
-        <Card style={{padding:'0px 170px', borderRadius:'0px', border:'0px', margin:'auto', width:'1440px'}}>
-            <div style={{fontSize: '40px', height: '66px', fontWeight:'bold', width:'1018px', margin: '66px auto 0px'}}>6D/4D Fun Tassie Vacation + Sydney</div>
-            <p style={{color:"#878787", width:'1018px', margin:'-15px auto 27px'}}>Australia</p>
+        <Card className="containerFotoTour">
+            <div className="titleFotoTour">6D/4D Fun Tassie Vacation + Sydney</div>
+            <p className="destinationFotoTour">Australia</p>
 
-            <div style={{backgroundImage: `url(${Australia})`, backgroundSize: 'cover', backgroundPosition: 'center', width:'1018px', height:'361px',margin:'auto'}}></div>
-
-            <div style={{display:'flex', justifyContent:'space-between',width:'1018px',margin:'12px auto'}}>
-                <div style={{backgroundImage: `url(${Australia})`, backgroundSize: 'cover', backgroundPosition: 'center', width:'329.73px', height:'167.64px'}}></div>
-                <div style={{backgroundImage: `url(${Australia})`, backgroundSize: 'cover', backgroundPosition: 'center', width:'329.73px', height:'167.64px'}}></div>
-                <div style={{backgroundImage: `url(${Australia})`, backgroundSize: 'cover', backgroundPosition: 'center', width:'329.73px', height:'167.64px'}}></div>
+            <div className="mainFotoTour" style={{backgroundImage: `url(${DataTour[0].Image})`}}></div>
+            
+            <div className="imageFotoTour">
+            {DataTour.slice(1, 4).map((item, index) => {
+                if (index === 2) {
+                    return (
+                    <div key={index} className="secondaryFotoTour" style={{backgroundImage: `url(${item.Image})`, filter:'blur(1.5px)'}}></div>
+                    );
+                } else {
+                    return (
+                    <div key={index} className="secondaryFotoTour" style={{backgroundImage: `url(${item.Image})`}}></div>
+                    );
+                }
+                })}
+                
+                <p className="dataHidden">+{dataHidden}</p>
             </div>
         </Card>
     )

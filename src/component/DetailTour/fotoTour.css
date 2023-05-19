@@ -1,0 +1,56 @@
+.containerFotoTour {
+    padding: 0px 170px;
+    border-radius:0px; 
+    border:0px;
+    margin:auto; 
+    width:1440px;
+}
+
+.titleFotoTour {
+    font-size: 40px; 
+    height: 66px; 
+    font-weight:bold; 
+    width:1018px; 
+    margin: 66px auto 0px;
+}
+
+.destinationFotoTour {
+    color:#878787;
+    width:1018px;
+    margin:-15px auto 27px;
+}
+
+.mainFotoTour {
+    background-size: cover;
+    background-position: center;
+    width:1018px; 
+    height:361px;
+    margin:auto; 
+    border-radius:5px;
+}
+
+.imageFotoTour{
+    display:grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    width: 1018px;
+    margin: 12px auto; 
+    grid-gap: 14px; 
+    position: relative;
+}
+
+.secondaryFotoTour {
+    background-size: cover; 
+    background-position: center; 
+    width: 330px; 
+    height: 168px; 
+    border-radius: 5px;
+}
+
+.dataHidden {
+    position:absolute;
+    right:146px;
+    top:58px;
+    color:white;
+    font-weight:bold;
+    font-size:35px;
+}

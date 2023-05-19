@@ -5,7 +5,7 @@ import DataPayment from "./DataPayment"
 function Payment () {
     return (
         <div style={{display:'flex'}}>
-            <div style={{display:'flex', width:'1440px', padding:'66px 202px', backgroundColor:'#E5E5E5', zIndex:'1'}}>
+            <div style={{display:'flex', width:'1440px', height:'777px', padding:'66px 202px', backgroundColor:'#E5E5E5'}}>
                 <div class="grid-container" style={{display: 'grid', gridTemplateColumns: 'auto auto', width:'1035px', height:'419px', padding:'8px 63px 17px 35px', border:'1px solid #B7B7B7', borderRadius:'10px', position:'relative', backgroundColor:'white'}}>
 
                     <div style={{display: 'grid', gridTemplateColumns: 'auto auto'}}>
@@ -68,11 +68,3 @@ function Payment () {
 }
 
 export default Payment
-
-// {/* <Row>
-//         <Col>1 of 2</Col>
-//       </Row>
-//       <Row>
-//         <Col>1 of 3</Col>
-//         <Col>2 of 3</Col>
-//       </Row> */}

@@ -13,7 +13,6 @@ function CardTour() {
        <CardGroup style={{display:"grid", gridTemplateColumns: "repeat(3, 1fr)", gridAutoRows: "auto", gridGap: "40px"}}>
        {DataCartTour.map((item, index) => {
         return (
-
         <Card key={index} style={{borderRadius:"10px", padding:"10px", width:'350px', height:'350px'}} onClick={(e) => {
           navigate('/DetailTour')
         }}>
