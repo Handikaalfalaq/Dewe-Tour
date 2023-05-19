@@ -1,25 +1,36 @@
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FolderImage from '../img/FolderImg';
+import './formLogin.css'
 
-function FormLogin() {
+function FormLogin({getDatas, openRegister}) {
+  const [inputEmail, setInputEmail] = useState('');
+  const [inputPassword, setInputPassword] = useState('');
+  
   return (
-    <Form style={{width:'500px', backgroundColor:'white' , height:'516px', overflow:'hidden' ,fontWeight:'bold', padding:'0px 33px', position:'relative', borderRadius:'10px'}}>
+    <Form className='containerFormLogin' onSubmit={(e) =>{
+      e.preventDefault()
+      getDatas(inputEmail, inputPassword)
+    } }>
         <img src={FolderImage.Palm} alt="palm" style={{position:'absolute', left:'0px'}}/>
         <img src={FolderImage.Hibiscus} alt="hibiscus" style={{position:'absolute', right:'0px'}}/>
         <p style={{margin:'51px 0px 75px 0px', textAlign:'center', fontSize:'36px'}}>Login</p>
         <Form.Group controlId="formBasicEmail" style={{marginBottom:'35px'}}>
             <Form.Label>Email</Form.Label>
-            <Form.Control type="text" placeholder="Enter Email" />
+            <Form.Control value={inputEmail} onChange={(e) => setInputEmail(e.target.value)} type="text" placeholder="Enter Email" />
         </Form.Group>
-        <Form.Group controlId="formBasicPassword" style={{marginBottom:'35px'}}>
+        <Form.Group style={{marginBottom:'35px'}}>
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter Password" />
+            <Form.Control value={inputPassword} onChange={(e) => setInputPassword(e.target.value)} type="password" placeholder="Enter Password" />
         </Form.Group>
-        <Button variant="primary" type="submit" style={{backgroundColor:'#FFAF00', border:'0px', width:'100%', marginBottom:'10px'}}>Register</Button>
+        <Button variant="primary" type="submit" style={{backgroundColor:'#FFAF00', border:'0px', width:'100%', marginBottom:'10px'}} >Login</Button>
 
         <div style={{textAlign:'center'}}>Don't have an account ? klik
-            <button style={{border:'0px', backgroundColor:'transparent'}}>Here</button>
+            <button style={{border:'0px', backgroundColor:'transparent'}} onClick={(e) => {
+              e.preventDefault()
+              openRegister()
+            }}>Here</button>
         </div>
     </Form>
   );

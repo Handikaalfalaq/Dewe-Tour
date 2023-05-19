@@ -1,0 +1,18 @@
+.containerRegister {
+    width:500px;
+    background-color: white;
+    height : 596px;
+    overflow:scroll; 
+    font-weight:bold; 
+    padding:0px 33px; 
+    position:relative; 
+    border-radius:10px;
+    
+}
+.containerRegister::-webkit-scrollbar-thumb {
+    background-color: transparent; 
+  }
+
+.containerRegister::-webkit-scrollbar-track {
+    background-color: transparent; 
+  }

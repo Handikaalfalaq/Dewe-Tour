@@ -3,15 +3,20 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import DataCartTour from './DataCartTour'
 import './cardTour.css'
+import { useNavigate} from 'react-router-dom';
 
 function CardTour() {
+  const navigate = useNavigate()
   return (
     <Container style={{marginTop:'72px', marginBottom:'121px'}}>
        <p style={{textAlign:"center", color:"black", marginBottom:"88px", fontSize:"45px", fontWeight:'500'}}>Group Tour</p>
        <CardGroup style={{display:"grid", gridTemplateColumns: "repeat(3, 1fr)", gridAutoRows: "auto", gridGap: "40px"}}>
        {DataCartTour.map((item, index) => {
         return (
-        <Card key={index} style={{borderRadius:"10px", padding:"10px", width:'350px', height:'350px'}}>
+
+        <Card key={index} style={{borderRadius:"10px", padding:"10px", width:'350px', height:'350px'}} onClick={(e) => {
+          navigate('/DetailTour')
+        }}>
           <div style={{display:'flex', alightItem: 'center', justifyContent:'center',position:'relative', padding:'0px'}}>
             <img src={item.Image} alt="destination" />
             <div className='date'>{item.Date}</div>

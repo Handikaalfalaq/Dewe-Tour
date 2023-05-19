@@ -1,10 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FolderImage from '../img/FolderImg';
+import './formRegister.css'
 
 function FormRegister() {
   return (
-    <Form style={{width:'500px', backgroundColor:'white', height:'596px', overflow:'scroll', fontWeight:'bold', padding:'0px 33px', position:'relative', borderRadius:'10px'}}>
+    <Form className='containerRegister'>
         <img src={FolderImage.Palm} alt="palm" style={{position:'absolute', left:'0px'}}/>
         <img src={FolderImage.Hibiscus} alt="hibiscus" style={{position:'absolute', right:'0px'}}/>
         <p style={{margin:'51px 0px 75px', textAlign:'center', fontSize:'36px'}}>Register</p>
