@@ -60,9 +60,9 @@ function Navbars() {
     <Navbar collapseOnSelect expand="lg" style={{ padding: '0px' }}>
         <Container style={{width:'1440px', position:'relative', padding: '0px' }}>
         {/* <img className="imagenavbar" src={FolderImage.Wallpaper} alt="logo" style={{zIndex:'-1', position:'absolute'}}/> */}
-          <Navbar.Brand href="#home" style={{ padding: '0px'}}>
+          <button style={{ padding: '0px', border:'0px', backgroundColor:'transparent'}} >
             <img src={FolderImage.Icon} alt="icon" style={{ height: '68px', zIndex:'3'}} />
-          </Navbar.Brand>
+          </button>
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav style={{ position: 'absolute', right: '0px' , padding:'0px'}}>

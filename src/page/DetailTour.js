@@ -1,15 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FotoDetailTour from '../component/detailTour/FotoDetailTour'
-import InformationTrip from '../component/informationTrip/InformationTrip';
-import PricePerson from '../component/pricePerson/PricePerson';
 
 function DetailTour() {
     return (
-      <div style={{height:'1432px', width:'1440px', margin:'auto', position:'relative'}}>
+      <div style={{maxHeight:'2032px', width:'1440px', margin:'auto', position:'relative', paddingBottom:'150px'}}>
           <FotoDetailTour/>
-          <InformationTrip/>
-          <PricePerson/>
       </div>
     );
   }
