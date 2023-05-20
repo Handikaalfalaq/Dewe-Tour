@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/nav';
 import Navbar from 'react-bootstrap/navbar';
-import Wallpaper from '../img/wallpaper.png';
 import FolderImage from '../img/FolderImg';
 import './navbar.css';
 import Modal from 'react-bootstrap/modal';
@@ -58,17 +57,18 @@ function Navbars() {
   
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" style={{ padding: '0px' }}>
-        <Container style={{ position: 'relative' }}>
-        <img className="imagenavbar" src={Wallpaper} alt="logo" style={{zIndex:'-1'}}/>
-          <Navbar.Brand href="#home" style={{ padding: '0px' }}>
-            <img src={FolderImage.Icon} alt="icon" style={{ height: '68px'}} />
+    <Navbar collapseOnSelect expand="lg" style={{ padding: '0px' }}>
+        <Container style={{width:'1440px', position:'relative', padding: '0px' }}>
+        {/* <img className="imagenavbar" src={FolderImage.Wallpaper} alt="logo" style={{zIndex:'-1', position:'absolute'}}/> */}
+          <Navbar.Brand href="#home" style={{ padding: '0px'}}>
+            <img src={FolderImage.Icon} alt="icon" style={{ height: '68px', zIndex:'3'}} />
           </Navbar.Brand>
+
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav style={{ position: 'absolute', right: '0px' }}>
+            <Nav style={{ position: 'absolute', right: '0px' , padding:'0px'}}>
 
               {InputLogin ? (
-                  <NavDropdown className='fotoprofil' style={{ backgroundImage: `url(${FolderImage.FotoProfil})`, backgroundColor:'blue'}}>
+                  <NavDropdown className='fotoprofil' style={{ backgroundImage: `url(${FolderImage.FotoProfil})`}}>
                       <NavDropdown.Item style={{backgroundColor:'white', borderRadius:'5px', padding:'20px 0px 20px'}}>
                         <div style={{paddingLeft:'30px', backgroundColor:'white'}} >
 
@@ -87,19 +87,19 @@ function Navbars() {
                   </NavDropdown>
               ) : (
                 <>
-                  <Nav.Link style={{ color: 'white' }} className="login" onClick={handleOpenLoginModal}>
+                  <Nav.Link className="login" onClick={handleOpenLoginModal}>
                       Login
                   </Nav.Link>
-                  <Nav.Link style={{ color: 'white' }} className="register" onClick={handleOpenRegisterModal}>
+                  <Nav.Link className="register" onClick={handleOpenRegisterModal}>
                       Register
                   </Nav.Link>
                 </>
               )}
-
+              
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+        </Navbar>
   
       <Modal show={showLoginModal} onHide={handleCloseLoginModal}>
         <FormLogin getDatas={getData} openRegister={handleOpenRegisterModal} />

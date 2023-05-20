@@ -4,7 +4,7 @@ import DataHistoryTrip from "./DataHistoryTrip"
 function HistoryTrip () {
     return (
         <div style={{display:'flex'}}>
-        <div style={{width:'1440px', backgroundColor:'#F1F1F1', paddingTop:'108px'}}>
+        <div style={{width:'1440px', paddingTop:'108px'}}>
             <div style={{fontSize:'36px', fontWeight:'bold' ,width:'1035px', margin:'auto'}}>History Trip</div>
 
             <div style={{display:'flex', width:'1440px', padding:'42px 202px 291px', zIndex:'1'}}>

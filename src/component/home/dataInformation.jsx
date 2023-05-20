@@ -1,28 +1,25 @@
-import agent from '../img/agent.png'
-import guarantee from '../img/guarantee.png'
-import heart from '../img/heart.png'
-import support from '../img/support.png'
+import FolderImage from '../img/FolderImg'
 
 const dataInformation = [
     { 
       Title: "Best Price Guarantee", 
       Info: "A small river named Duren flows by their place and supplies", 
-      Image: agent
+      Image: FolderImage.Agent
     },
     { 
       Title: "Travellers Love Us", 
       Info: "A small river named Duren flows by their place and supplies", 
-      Image: guarantee 
+      Image: FolderImage.Guarantee 
     },
     { 
       Title: "Best Travellers Agent", 
       Info: "A small river named Duren flows by their place and supplies", 
-      Image: heart
+      Image: FolderImage.Heart
     },
     { 
       Title: "Our Dedicated Support", 
       Info: "A small river named Duren flows by their place and supplies", 
-      Image: support
+      Image: FolderImage.Support
     }
   ];
 

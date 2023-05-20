@@ -1,33 +1,29 @@
-import calender from "../img/calendar.png"
-import hotel from "../img/hotel.png"
-import meal from "../img/meal.png"
-import time from "../img/time.png"
-import plane from "../img/plane.png"
+import FolderImage from "../img/FolderImg"
 
 const DataInformationTrip = [
     {
         Title: "Accomodation",
-        Image : calender,
+        Image : FolderImage.Calendar,
         Info : "Hotel 4 Night"
     },
     {
         Title: "Transportation",
-        Image : hotel,
+        Image : FolderImage.Hotel,
         Info : "Qatar Airways"
     },
     {
         Title: "Eat",
-        Image : meal,
+        Image : FolderImage.Meal,
         Info : "Included as Itinerary"
     },
     {
         Title: "Duration",
-        Image : time,
+        Image : FolderImage.Time,
         Info : "6 Day 4 Night"
     },
     {
         Title: "Date Trip",
-        Image: plane,
+        Image: FolderImage.Plane,
         Info : "26 Aguustus 2020",
     }
 ]
