@@ -8,26 +8,25 @@ import { useContext} from "react";
 function Payment () {
     const {total, amount, dateBooking, dataBooking, setDataBooking, paySukses, setPaySukses} = useContext(DataContext);
 
-    const param = useParams('id')
+    const {id} = useParams()
     
-    const DataSlice = DataTour[param.id].InformationTrip.slice(0, 2).concat(DataTour[param.id].InformationTrip.slice(3))
+    const DataSlice = DataTour[id].InformationTrip.slice(0, 2).concat(DataTour[id].InformationTrip.slice(3))
     
     const DataFilter = [DataSlice[3],DataSlice[2], DataSlice[0], DataSlice[1]]
-
+    
     const handlePay = () => {
         setPaySukses(true);
         setDataBooking(
             { 
-                time : DataTour[param.id].Time,
-                destination: DataTour[param.id].Destination ,
-                country: DataTour[param.id].Country,
+                time : DataTour[id].Time,
+                destination: DataTour[id].Destination ,
+                country: DataTour[id].Country,
                 dataTrip: DataFilter,
                 amount : amount,
                 total : total,
             }
         );
     }
-
     console.log(dataBooking);
 
     return (
@@ -39,8 +38,8 @@ function Payment () {
                         <div style={{gridColumn: 'span 2'}}><img src={FolderImage.Icon} alt="icon" style={{ height: '68px'}} /></div>
                         <div>
 
-                            <p style={{fontSize: '24px', fontWeight:'bold', margin:'0px', maxWidth:'370px'}}>{DataTour[param.id].Time} {DataTour[param.id].Destination}</p>
-                            <p style={{fontSize: '14px', margin:'4px 0px 31px'}}>{DataTour[param.id].Country}</p>
+                            <p style={{fontSize: '24px', fontWeight:'bold', margin:'0px', maxWidth:'370px'}}>{DataTour[id].Time} {DataTour[id].Destination}</p>
+                            <p style={{fontSize: '14px', margin:'4px 0px 31px'}}>{DataTour[id].Country}</p>
 
                             {paySukses ? (
                                 <p style={{width:'112px', height:'24px',fontSize: '12px', backgroundColor:'rgb(236, 122, 122, 0.3', display:'flex', justifyContent:'center', alignItems:'center', fontWeight:'bold', color:'#FF9900'}}>Waiting Approve</p>

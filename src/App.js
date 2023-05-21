@@ -8,6 +8,8 @@ import Copyright from './component/copyright/Copyright';
 import { Container } from "react-bootstrap"
 import FolderImage from "./component/img/FolderImg"
 import Transaction from "./page/transaction"
+import IncomeTripAdmin from "./page/IncomeTrip"
+import AddTripForm from "./page/AddTrip"
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route exact path="/Payment/:id" element={<PaymentPage/>} />
           <Route exact path="/Profile" element={<Profile/>} />
           <Route exact path="/TransactionList" element={<Transaction/>} />
+          <Route exact path="/IncomeTrip" element={<IncomeTripAdmin/>} />
+          <Route exact path="/AddTripForm" element={<AddTripForm/>} />
         </Routes>
         <Copyright/>
       </Container>

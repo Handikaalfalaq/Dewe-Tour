@@ -13,13 +13,13 @@ import { Link } from 'react-router-dom';
 
 
 function Navbars() {
-  const {InputLogin, setInputLogin, idParam} = useContext(DataContext)
+  const {InputLogin, setInputLogin } = useContext(DataContext)
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   let appearancePay = false;
 
-  console.log(idParam);
-  if (idParam != null) {
+  console.log();
+  if ( 0 != null) {
    appearancePay = true
   } else {
     appearancePay = false
@@ -85,7 +85,7 @@ function Navbars() {
 
                         {appearancePay ? (
                           <div style={{ padding: '10px 0px 0px 30px', marginBottom: '30px', backgroundColor: 'white' }}>
-                          <Link to= {`/Payment/${idParam}`} style={{ textDecoration: 'none', color: 'black' }}>
+                          <Link to= {`/Payment/`} style={{ textDecoration: 'none', color: 'black' }} >
                             <img src={FolderImage.Bill} alt="icon profile" /> Pay
                           </Link>
                         </div>
