@@ -38,6 +38,7 @@ import LeafLanding from './leafLanding.png'
 import Letter from './letter.png'
 import Login from './Login.png'
 import Logout from './logout.png'
+import Magnifying from './magnifying.png'
 import Meal from './meal.png'
 import Minus from './Minus.png'
 import Nota from './Nota.png'
@@ -108,6 +109,7 @@ const FolderImage = {
   Letter,
   Login,
   Logout,
+  Magnifying,
   Meal,
   Minus,
   Nota,

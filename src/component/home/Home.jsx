@@ -6,10 +6,11 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import DataDetailTour from '../DataDetailTour'
 import { useNavigate} from 'react-router-dom';
 
+
 function Home() {
   const navigate = useNavigate()
   return (
-      <Container style={{ position:'relative', maxWidth:'1440px', height:'1931px'}}>
+      <Container className='inihome' style={{ position:'relative', maxWidth:'1440px', height:'1931px'}}>
           <Card style={{borderRadius:"10px", padding:"10px 10px", backgroundColor:'transparent', border:'0px', margin:'auto'}}>
               <p style={{color:'white', fontSize:'50px', fontWeight:'bold', marginTop:'50px', marginBottom:'0px', height:'78px'}}>Explore</p>
               <p style={{color:'white', fontSize:'40px', fontWeight:'lighter', marginTop:'-20px', marginBottom:'10px',height:'78px'}}>your amazing city together</p>

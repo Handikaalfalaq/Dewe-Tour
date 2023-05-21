@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App'
-import { TotalProvider } from "./page/dataContext"
+import { DataProvider } from "./page/dataContext"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <div>
-      <TotalProvider>
+      <DataProvider>
         <App/>
-      </TotalProvider>
+      </DataProvider>
     </div>
 );
 

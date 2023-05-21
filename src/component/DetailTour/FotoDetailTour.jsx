@@ -5,17 +5,17 @@ import { useParams } from "react-router-dom";
 import React, {useState , useEffect, useContext} from 'react'
 import FolderImage from '../img/FolderImg'
 import { useNavigate} from 'react-router-dom';
-import { TotalContext } from "../../page/dataContext";
+import { DataContext } from "../../page/dataContext";
+
 const dataHidden = DataTour.length - 3;
 
 function FotoTour (){
-    const {total, setTotal, setAmount, setDateBooking} = useContext(TotalContext)
+    const {total, setTotal, setAmount, setDateBooking, InputLogin,setIdParam} = useContext(DataContext)
     
     const param = useParams('id')
+
     const navigate = useNavigate()
-
     const [calculation, setCalculation] = useState(1);
-
     const handlePlusClick = () => {
         setCalculation(calculation + 1);
     };
@@ -29,7 +29,9 @@ function FotoTour (){
     useEffect(() => {
         setAmount(calculation);
         setTotal(DataTour[param.id].Price * calculation);
-      }, [calculation, param.id, setTotal, setAmount]);
+        setIdParam(param);
+      }, [calculation, param.id, setTotal, setAmount, param, setIdParam]);
+      
       
     const handleDate = () => {
         const date = new Date();
@@ -40,11 +42,14 @@ function FotoTour (){
           });
     setDateBooking(formattedDate);
     };
-      
-    const handleDouble = (e) =>{
+
+    const handleDouble = () =>{
         handleDate();
+        if (InputLogin === true) {
         navigate('/Payment/' + param.id);
-    }
+    } else {
+        alert('Harus Login Terlebih Dahulu')
+    }}
 
     return(
         <>

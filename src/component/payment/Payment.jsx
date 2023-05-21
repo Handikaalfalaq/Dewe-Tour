@@ -2,15 +2,34 @@ import FolderImage from "../img/FolderImg"
 import './payment.css'
 import DataTour from "../DataDetailTour"
 import { useParams } from "react-router-dom";
-import { TotalContext } from "../../page/dataContext";
-import { useContext } from "react";
+import { DataContext } from "../../page/dataContext";
+import { useContext} from "react";
 
 function Payment () {
-    const {total, amount, dateBooking} = useContext(TotalContext);
+    const {total, amount, dateBooking, dataBooking, setDataBooking, paySukses, setPaySukses} = useContext(DataContext);
 
     const param = useParams('id')
+    
     const DataSlice = DataTour[param.id].InformationTrip.slice(0, 2).concat(DataTour[param.id].InformationTrip.slice(3))
+    
     const DataFilter = [DataSlice[3],DataSlice[2], DataSlice[0], DataSlice[1]]
+
+    const handlePay = () => {
+        setPaySukses(true);
+        setDataBooking(
+            { 
+                time : DataTour[param.id].Time,
+                destination: DataTour[param.id].Destination ,
+                country: DataTour[param.id].Country,
+                dataTrip: DataFilter,
+                amount : amount,
+                total : total,
+            }
+        );
+    }
+
+    console.log(dataBooking);
+
     return (
         <div style={{display:'flex'}}>
             <div style={{display:'flex', width:'1440px', height:'777px', padding:'66px 202px', backgroundColor:'#E5E5E5'}}>
@@ -19,9 +38,16 @@ function Payment () {
                     <div style={{display: 'grid', gridTemplateColumns: 'auto auto'}}>
                         <div style={{gridColumn: 'span 2'}}><img src={FolderImage.Icon} alt="icon" style={{ height: '68px'}} /></div>
                         <div>
+
                             <p style={{fontSize: '24px', fontWeight:'bold', margin:'0px', maxWidth:'370px'}}>{DataTour[param.id].Time} {DataTour[param.id].Destination}</p>
                             <p style={{fontSize: '14px', margin:'4px 0px 31px'}}>{DataTour[param.id].Country}</p>
-                            <p style={{width:'112px', height:'24px',fontSize: '12px', color:'#EC7A7A', backgroundColor:'rgb(236, 122, 122, 0.3', display:'flex', justifyContent:'center', alignItems:'center'}}>Waiting Payment</p>
+
+                            {paySukses ? (
+                                <p style={{width:'112px', height:'24px',fontSize: '12px', backgroundColor:'rgb(236, 122, 122, 0.3', display:'flex', justifyContent:'center', alignItems:'center', fontWeight:'bold', color:'#FF9900'}}>Waiting Approve</p>
+                            ) : (
+                                <p style={{width:'112px', height:'24px',fontSize: '12px', color:'#EC7A7A', backgroundColor:'rgb(236, 122, 122, 0.3', display:'flex', justifyContent:'center', alignItems:'center'}}>Waiting Payment</p>
+                            )}
+
                         </div>
                         <div style={{display: 'grid', gridTemplateColumns: 'auto auto', gridRow: 'span 2'}}>
                         {DataFilter.map((item, index) => {
@@ -65,10 +91,15 @@ function Payment () {
                         <div></div>
                         <div></div>
                         <div>Total</div>
-                        <div style={{color:'red', border:'0px'}}>: IDR.{total}</div>
+                        <div style={{color:'red', border:'0px'}}>: IDR.{total.toLocaleString()}</div>
                     </div>
+                    
+                    {paySukses ? (
+                        <div></div>
+                    ): (
+                        <button style={{height:'50px', width:'213px', backgroundColor:'#FFAF00', borderRadius:'4px', border:'0px', position:'absolute', bottom:'-78px', right:'0px'}} onClick={handlePay}>PAY</button>
+                    )}
 
-                    <button style={{height:'50px', width:'213px', backgroundColor:'#FFAF00', borderRadius:'4px', border:'0px', position:'absolute', bottom:'-78px', right:'0px'}}>PAY</button>
                 </div>
             </div>
         </div>

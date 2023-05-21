@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useContext} from 'react';
 import Container from 'react-bootstrap/container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/nav';
@@ -8,12 +8,22 @@ import './navbar.css';
 import Modal from 'react-bootstrap/modal';
 import FormLogin from '../formLogin/FormLogin'
 import FormRegister from '../formRegister/FormRegister';
+import { DataContext } from "../../page/dataContext";
+import { Link } from 'react-router-dom';
 
 
 function Navbars() {
+  const {InputLogin, setInputLogin, idParam} = useContext(DataContext)
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
-  const [InputLogin, setInputLogin] = useState(false);
+  let appearancePay = false;
+
+  console.log(idParam);
+  if (idParam != null) {
+   appearancePay = true
+  } else {
+    appearancePay = false
+  }
 
   function getData (inputEmail,inputPassword) {
     if (inputEmail === 'customer@gmail.com') {
@@ -54,36 +64,43 @@ function Navbars() {
   const handleCloseRegisterModal = () => {
     setShowRegisterModal(false);
   };
-  
+   
   return (
     <>
     <Navbar collapseOnSelect expand="lg" style={{ padding: '0px' }}>
         <Container style={{width:'1440px', position:'relative', padding: '0px' }}>
-        {/* <img className="imagenavbar" src={FolderImage.Wallpaper} alt="logo" style={{zIndex:'-1', position:'absolute'}}/> */}
-          <button style={{ padding: '0px', border:'0px', backgroundColor:'transparent'}} >
+        <Link to="/">
             <img src={FolderImage.Icon} alt="icon" style={{ height: '68px', zIndex:'3'}} />
-          </button>
+          </Link>
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav style={{ position: 'absolute', right: '0px' , padding:'0px'}}>
 
               {InputLogin ? (
                   <NavDropdown className='fotoprofil' style={{ backgroundImage: `url(${FolderImage.FotoProfil})`}}>
-                      <NavDropdown.Item style={{backgroundColor:'white', borderRadius:'5px', padding:'20px 0px 20px'}}>
-                        <div style={{paddingLeft:'30px', backgroundColor:'white'}} >
+                      <NavDropdown.Item style={{ backgroundColor: 'white', borderRadius: '5px', padding: '20px 0px 20px'}}>
+                        <Link to="/Profile" style={{ textDecoration: 'none', color: 'black', paddingLeft: '30px', display:'flex', marginBottom: '15px'}}>
+                          <img src={FolderImage.IconProfile} alt="icon profile" /> Profile
+                        </Link>
 
-                          <img src={FolderImage.IconProfile} alt="icon profile" /> Profile</div>
+                        {appearancePay ? (
+                          <div style={{ padding: '10px 0px 0px 30px', marginBottom: '30px', backgroundColor: 'white' }}>
+                          <Link to= {`/Payment/${idParam}`} style={{ textDecoration: 'none', color: 'black' }}>
+                            <img src={FolderImage.Bill} alt="icon profile" /> Pay
+                          </Link>
+                        </div>
+                        ): (
+                          <div></div>
+                        )}
 
-                        <div style={{padding:'10px 0px 0px 30px', margin:'15px 0px 30px 0px', backgroundColor:'white'}}><img src={FolderImage.Bill} alt="icon profile" />Pay</div>
-                        
-                        <div style={{padding:'20px 0px 0px 30px', borderTop:'3px solid #A8A8A8', backgroundColor:'white'}} onClick={(e) => {
+                        <div style={{ padding: '20px 0px 0px 30px', borderTop: '3px solid #A8A8A8', backgroundColor: 'white' }} onClick={(e) => {
                           e.preventDefault()
                           logout()
-                        }}><img src={FolderImage.Logout} alt="icon profile" />Logout</div>
-                        
-                        <img src={FolderImage.Triangle} alt="Triangle" style={{position:'absolute', top:'-20px', right:'0px'}}/>
+                        }}>
+                          <img src={FolderImage.Logout} alt="icon profile" /> Logout
+                        </div>
+                        <img src={FolderImage.Triangle} alt="Triangle" style={{ position: 'absolute', top: '-20px', right: '0px' }} />
                       </NavDropdown.Item>
-                      
                   </NavDropdown>
               ) : (
                 <>
