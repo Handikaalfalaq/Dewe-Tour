@@ -65,6 +65,7 @@ import Register from './Register.png'
 import Support from './support.png'
 import Time from './time.png'
 import Triangle from './triangle.png'
+import Trip from './Trip.png'
 import Vector from './Vector.png'
 import Wallpaper from './wallpaper.png'
 
@@ -136,6 +137,7 @@ const FolderImage = {
   Support,
   Time,
   Triangle,
+  Trip,
   Vector,
   Wallpaper,
 };

@@ -6,7 +6,7 @@ import { DataContext } from "../../page/dataContext";
 import { useContext} from "react";
 
 function Payment () {
-    const {total, amount, dateBooking, dataBooking, setDataBooking, paySukses, setPaySukses} = useContext(DataContext);
+    const {total, amount, dateBooking, setDataBooking, paySukses, setPaySukses} = useContext(DataContext);
 
     const {id} = useParams()
     
@@ -27,7 +27,6 @@ function Payment () {
             }
         );
     }
-    console.log(dataBooking);
 
     return (
         <div style={{display:'flex'}}>

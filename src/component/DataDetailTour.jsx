@@ -45,7 +45,7 @@ const DataTour = [
         Destination: "Embark on an Extraordinary Holiday in Korea Selatan's Wonderland!",
         Description: "Sungai Cheonggyecheon: Sungai yang terletak di pusat kota Seoul. Dibangun kembali sebagai taman perkotaan yang indah, Cheonggyecheon menawarkan jalur hijau yang menyegarkan dengan air terjun, jembatan, dan taman yang indah. Istana Gyeongbokgung: Istana yang megah di Seoul dan merupakan salah satu dari lima istana utama Korea. Istana ini memiliki arsitektur yang indah dan merupakan saksi sejarah Korea yang kaya. Desa Hanok: Desa tradisional Korea di Seoul, seperti Bukchon Hanok Village. Desa ini mempertahankan rumah-rumah tradisional Korea (hanok) yang indah dan memungkinkan pengunjung untuk merasakan kehidupan tradisional Korea. Pulau Jeju: Pulau yang terletak di selatan Korea Selatan dan merupakan tujuan wisata populer. Pulau ini memiliki keindahan alam yang menakjubkan, seperti pemandangan gunung berapi, pantai-pantai indah, dan taman alam yang spektakuler. Lotte World: Taman hiburan terbesar di Korea Selatan yang terletak di Seoul. Lotte World menawarkan berbagai atraksi, wahana, pertunjukan, dan toko-toko yang menarik bagi pengunjung segala usia. Museum Sains Nasional Gwacheon: Museum sains yang terletak di Gwacheon, dekat Seoul. Museum ini menampilkan pameran interaktif yang menarik tentang ilmu pengetahuan dan teknologi, serta menawarkan pengalaman belajar yang menyenangkan bagi pengunjung.",
         Country: "Korea Selatan",
-        Price: 28999000,
+        Price: 18999000,
         Date: "10/15",
         Image: [FolderImage.koreaSelatanCheonggyecheonRiver, FolderImage.koreaSelatanGyeongbokgungPalace, FolderImage.koreaSelatanHanokVillage, FolderImage.koreaSelatanJejuIsland, FolderImage.koreaSelatanLotteWorld, FolderImage.koreaSelatanNationalGwacheonScienceMuseum]
     },
@@ -61,7 +61,7 @@ const DataTour = [
         Destination: "Unforgettable Adventures Await in Lampung!",
         Description: "Danau Suoh: Danau indah yang terletak di Kecamatan Suoh, Lampung Barat. Danau ini dikelilingi oleh hutan tropis yang menawan dan menawarkan pemandangan alam yang spektakuler. Gigi Hiu: Spot selancar yang terkenal di Pantai Tanjung Setia, Lampung Barat. Ombak yang kuat dan panjang menjadikan Gigi Hiu tempat yang populer bagi para peselancar. Pantai Dewi Mandapa: Pantai yang menakjubkan dengan pasir putih dan air biru yang jernih di Kecamatan Way Jepara, Lampung Timur. Tempat ini merupakan surga bagi para pecinta pantai dan menyediakan berbagai kegiatan seperti berenang, berselancar, atau hanya bersantai. Pulau Pahawang: Pulau tropis yang terletak di Selat Sunda, Lampung. Terkenal dengan keindahan bawah lautnya yang mempesona, Pulau Pahawang menjadi tempat yang populer untuk snorkeling, menyelam, dan menikmati kehidupan laut yang beragam. Pulau Tegal Mas: Pulau kecil yang terletak di Teluk Lampung. Pulau ini menawarkan pantai berpasir putih, air laut yang jernih, dan terumbu karang yang indah. Ideal untuk berenang, berjemur, dan snorkeling. Bukit Temiang: Bukit yang terletak di Kota Bandar Lampung. Dari puncak bukit, pengunjung dapat menikmati pemandangan panorama kota yang menakjubkan, terutama saat matahari terbenam.",
         Country: "Lampung",
-        Price: 3188000000,
+        Price: 7188000,
         Date: "02/02",
         Image: [FolderImage.LampungDanauSuoh, FolderImage.LampungGigiHiu, FolderImage.LampungPantaiDewiMandapa, FolderImage.LampungPulauPahawang, FolderImage.LampungPulauTegalMas, FolderImage.LampungTemianganHill]
     },

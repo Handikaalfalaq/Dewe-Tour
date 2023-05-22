@@ -10,6 +10,7 @@ import FolderImage from "./component/img/FolderImg"
 import Transaction from "./page/transaction"
 import IncomeTripAdmin from "./page/IncomeTrip"
 import AddTripForm from "./page/AddTrip"
+import PrivateRoute from "./page/PrivateRoutes"
 
 function App() {
   return (
@@ -21,13 +22,24 @@ function App() {
         <img src={FolderImage.PalmLanding} alt="destination" style={{position:'absolute', left:'0px', top:'41%', zIndex:'1'}}/>
         <Navbars/>  
         <Routes>
-          <Route exact path="/" element={<Index/>} />
-          <Route exact path="/DetailTour/:id" element={<DetailTour/>} />
-          <Route exact path="/Payment/:id" element={<PaymentPage/>} />
-          <Route exact path="/Profile" element={<Profile/>} />
-          <Route exact path="/TransactionList" element={<Transaction/>} />
-          <Route exact path="/IncomeTrip" element={<IncomeTripAdmin/>} />
-          <Route exact path="/AddTripForm" element={<AddTripForm/>} />
+          <Route exact path="/" element={<PrivateRoute role="visitor"/>} >
+            <Route exact path="/" element={<Index/>} />
+            <Route exact path="/DetailTour/:id" element={<DetailTour/>} />
+          </Route>
+          
+          <Route exact path="/" element={<PrivateRoute role="user"/>} >
+            <Route exact path="/" element={<Index/>} />
+            <Route exact path="/DetailTour/:id" element={<DetailTour/>} />
+            <Route exact path="/Payment/:id" element={<PaymentPage/>} />
+            <Route exact path="/Profile" element={<Profile/>} />
+          </Route>
+
+          <Route exact path="/" element={<PrivateRoute role="admin"/>} >
+            <Route exact path="/TransactionList" element={<Transaction/>} />
+            <Route exact path="/IncomeTrip" element={<IncomeTripAdmin/>} />
+            <Route exact path="/AddTripForm" element={<AddTripForm/>} />
+          </Route>
+
         </Routes>
         <Copyright/>
       </Container>

@@ -10,10 +10,9 @@ import { DataContext } from "../../page/dataContext";
 const dataHidden = DataTour.length - 3;
 
 function FotoTour (){
-    const {total, setTotal, setAmount, setDateBooking, InputLogin, setPaySukses } = useContext(DataContext)
+    const {total, setTotal, setAmount, setDateBooking, InputLogin, setPaySukses} = useContext(DataContext)
     
-    const {id}= useParams()
-    console.log(id);
+    const number = useParams("id")
     const navigate = useNavigate()
     const [calculation, setCalculation] = useState(1);
     const handlePlusClick = () => {
@@ -28,8 +27,8 @@ function FotoTour (){
 
     useEffect(() => {
         setAmount(calculation);
-        setTotal(DataTour[id].Price * calculation);
-      }, [calculation, id, setTotal, setAmount]);
+        setTotal(DataTour[number.id].Price * calculation);
+      }, [calculation, number.id, setTotal, setAmount]);
       
       
     const handleDate = () => {
@@ -45,7 +44,7 @@ function FotoTour (){
     const handleDouble = () =>{
         handleDate();
         if (InputLogin === true) {
-        navigate('/Payment/' + id);
+        navigate('/Payment/' + number.id);
         setPaySukses(false)
     } else {
         alert('Harus Login Terlebih Dahulu')
@@ -54,12 +53,12 @@ function FotoTour (){
     return(
         <>
             <Card className="containerFotoTour">
-                <div className="titleFotoTour">{DataTour[id].Time} {DataTour[id].Destination}</div>
-                <p className="destinationFotoTour">{DataTour[id].Country}</p>
+                <div className="titleFotoTour">{DataTour[number.id].Time} {DataTour[number.id].Destination}</div>
+                <p className="destinationFotoTour">{DataTour[number.id].Country}</p>
 
-                <div className="mainFotoTour" style={{backgroundImage: `url(${DataTour[id].Image[0]})`}}></div>
+                <div className="mainFotoTour" style={{backgroundImage: `url(${DataTour[number.id].Image[0]})`}}></div>
                 <div className="imageFotoTour"> 
-                {DataTour[id].Image.slice(1, 4).map((image, index) => {
+                {DataTour[number.id].Image.slice(1, 4).map((image, index) => {
                     if (index === 2) {
                         return (
                         <div key={index} className="secondaryFotoTour" style={{ backgroundImage: `url(${image})`, filter:'blur(1.5px)'}}></div>
@@ -78,7 +77,7 @@ function FotoTour (){
             <p style={{margin:'47px 0px 10px', height:'24px', fontWeight:'bold'}}>Information Trip</p>
             <div style={{display:'flex', justifyContent:'space-between'}}>
 
-            {DataTour[id].InformationTrip.map((item,index) => {
+            {DataTour[number.id].InformationTrip.map((item,index) => {
                 return (
                 <div key={index}>
                     <p style={{fontSize:'12px' ,height:'18px', marginBottom:'3px', color:'#A8A8A8'}}>{item[0]}</p>
@@ -91,14 +90,14 @@ function FotoTour (){
             </div>
             <div className="description">
                 <p style={{fontSize:'18px', margin:'20px 0px 7px', fontWeight:'bold'}}>Description</p>
-                <p style={{color:'#A8A8A8'}}>{DataTour[id].Description}</p>
+                <p style={{color:'#A8A8A8'}}>{DataTour[number.id].Description}</p>
             </div>
             </Card>
 
             <div className='containerPricePerson'>
                 <div className='tablePricePerson'>
                     <div style={{display:'flex'}}>
-                        <div style={{color:'#FFAF00', marginRight:'5px'}}>IDR. {DataTour[id].Price.toLocaleString()}</div>
+                        <div style={{color:'#FFAF00', marginRight:'5px'}}>IDR. {DataTour[number.id].Price.toLocaleString()}</div>
                         <div>/ Person</div>
                     </div>
                     <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
