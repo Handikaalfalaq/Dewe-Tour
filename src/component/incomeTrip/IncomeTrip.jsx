@@ -3,14 +3,17 @@ import './incomeTrip.css';
 import CardGroup from 'react-bootstrap/CardGroup';
 import DataDetailTour from '../DataDetailTour'
 import Container from 'react-bootstrap/container';
+import { useNavigate } from 'react-router-dom';
 
 function IncomeTrip () {
+    window.scrollTo(0,0)
+    const navigate = useNavigate();
     return (
         <Container style={{ position:'relative', maxWidth:'1440px', height:'1200px', backgroundColor:'white', padding:'100px 100px'}}>
             <div>
                 <div style={{display:'flex', justifyContent:'space-between', margin:'0px auto 20px'}}>
                     <p style={{fontSize:'36px', fontWeight:'bold'}}>Income Trip</p>
-                    <button style={{color:'white', backgroundColor:'#FFAF00', width:'150px', height:'40px', borderRadius:'5px', border:'0px'}}>Add Trip</button>
+                    <button onClick={() => navigate("/AddTripForm" )} style={{color:'white', backgroundColor:'#FFAF00', width:'150px', height:'40px', borderRadius:'5px', border:'0px'}}>Add Trip</button>
                 </div>
                 <CardGroup style={{display:"grid", gridTemplateColumns: "repeat(3, 1fr)", gridAutoRows: "auto", gridGap: "40px", paddingLeft:'35px'}}>
                     {DataDetailTour.map((item, index) => {

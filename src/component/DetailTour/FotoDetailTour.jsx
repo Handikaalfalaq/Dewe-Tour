@@ -10,6 +10,7 @@ import { DataContext } from "../../page/dataContext";
 const dataHidden = DataTour.length - 3;
 
 function FotoTour (){
+    
     const {total, setTotal, setAmount, setDateBooking, InputLogin, setPaySukses} = useContext(DataContext)
     
     const number = useParams("id")

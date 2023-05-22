@@ -10,7 +10,7 @@ const PrivateRoute = ({element: Component, role, ...rest}) => {
     } else if (InputLoginAdmin === true ) {
       Visitor = false
     }
-
+    
     const User = InputLogin
     const Admin = InputLoginAdmin
     

@@ -4,7 +4,7 @@ import DetailTour from './page/DetailTour'
 import PaymentPage from './page/Payment'
 import Profile from "./page/Profile"
 import Navbars from "./component/navbar/Navbar"
-import Copyright from './component/copyright/Copyright';
+import Copyright from './component/Copyright';
 import { Container } from "react-bootstrap"
 import FolderImage from "./component/img/FolderImg"
 import Transaction from "./page/transaction"
@@ -22,10 +22,10 @@ function App() {
         <img src={FolderImage.PalmLanding} alt="destination" style={{position:'absolute', left:'0px', top:'41%', zIndex:'1'}}/>
         <Navbars/>  
         <Routes>
-          <Route exact path="/" element={<PrivateRoute role="visitor"/>} >
+          {/* <Route exact path="/" element={<PrivateRoute role="visitor"/>} > */}
             <Route exact path="/" element={<Index/>} />
             <Route exact path="/DetailTour/:id" element={<DetailTour/>} />
-          </Route>
+          {/* </Route> */}
           
           <Route exact path="/" element={<PrivateRoute role="user"/>} >
             <Route exact path="/" element={<Index/>} />

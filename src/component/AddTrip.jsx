@@ -2,7 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function FormDisabledExample() {
-  return (
+    window.scrollTo(0,0)
+    return (
     <Form style={{padding:'108px 118px', position:'relative'}}>
         <div style={{fontSize:'36px', marginBottom:'42px'}}>Add Trip</div>
         <Form.Group className="mb-3">
@@ -73,7 +74,7 @@ function FormDisabledExample() {
 
       <Button type="submit"  style={{width:'150px', position:'absolute', left:'650px', bottom:'10px'}}>Submit</Button>
     </Form>
-  );
+    );
 }
 
 export default FormDisabledExample;

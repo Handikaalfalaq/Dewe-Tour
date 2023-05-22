@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Navbars() {
+  window.scrollTo(0,0)
   const navigate = useNavigate();
   const {InputLogin, setInputLogin, InputLoginAdmin, setInputLoginAdmin, navbarProfile, setNavbarProfile} = useContext(DataContext)
   const [showLoginModal, setShowLoginModal] = useState(false);

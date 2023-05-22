@@ -6,6 +6,7 @@ import { DataContext } from "../../page/dataContext";
 import { useContext} from "react";
 
 function Payment () {
+    window.scrollTo(0,0)
     const {total, amount, dateBooking, setDataBooking, paySukses, setPaySukses} = useContext(DataContext);
 
     const {id} = useParams()
