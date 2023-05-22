@@ -1,4 +1,4 @@
-import TransactionList from "../component/transaction/TransactionList"
+import TransactionList from "../component/Admin/TransactionList"
 
 function Transaction () {
     return (

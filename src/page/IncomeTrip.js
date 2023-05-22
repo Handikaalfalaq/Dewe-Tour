@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import IncomeTrip from '../component/incomeTrip/IncomeTrip';
+import IncomeTrip from '../component/Admin/IncomeTrip'
 
 function IncomeTripAdmin() {
     return (

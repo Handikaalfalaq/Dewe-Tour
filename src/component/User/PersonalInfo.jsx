@@ -1,5 +1,5 @@
 import FolderImage from "../img/FolderImg"
-import DataPersonalInfo from "./DataPersonalInfo"
+import DataPersonalInfo from "../assets/DataPersonalInfo"
 
 function PersonalInfo (){
     return (

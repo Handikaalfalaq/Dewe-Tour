@@ -1,12 +1,11 @@
 import Card from 'react-bootstrap/Card';
-import './incomeTrip.css';
+import '../assets/Index.css';
 import CardGroup from 'react-bootstrap/CardGroup';
-import DataDetailTour from '../DataDetailTour'
+import DataDetailTour from '../assets/DataDetailTour';
 import Container from 'react-bootstrap/container';
 import { useNavigate } from 'react-router-dom';
 
 function IncomeTrip () {
-    window.scrollTo(0,0)
     const navigate = useNavigate();
     return (
         <Container style={{ position:'relative', maxWidth:'1440px', height:'1200px', backgroundColor:'white', padding:'100px 100px'}}>

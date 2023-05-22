@@ -3,17 +3,16 @@ import Container from 'react-bootstrap/container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/nav';
 import Navbar from 'react-bootstrap/navbar';
-import FolderImage from '../img/FolderImg';
-import './navbar.css';
+import FolderImage from './img/FolderImg';
+import './assets/Index.css'
 import Modal from 'react-bootstrap/modal';
-import FormLogin from '../formLogin/FormLogin'
-import FormRegister from '../formRegister/FormRegister';
-import { DataContext } from "../../page/dataContext";
+import FormLogin from './FormLogin'
+import FormRegister from './FormRegister';
+import { DataContext } from "../page/dataContext";
 import { useNavigate } from 'react-router-dom';
 
 
 function Navbars() {
-  window.scrollTo(0,0)
   const navigate = useNavigate();
   const {InputLogin, setInputLogin, InputLoginAdmin, setInputLoginAdmin, navbarProfile, setNavbarProfile} = useContext(DataContext)
   const [showLoginModal, setShowLoginModal] = useState(false);

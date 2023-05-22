@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import FolderImage from '../img/FolderImg';
-import './formRegister.css'
+import FolderImage from './img/FolderImg';
+import './assets/Index.css'
 
 function FormRegister({openLogin}) {
   return (

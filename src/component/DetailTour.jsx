@@ -1,18 +1,16 @@
 import { Card } from "react-bootstrap"
-import DataTour from "../DataDetailTour"
-import './fotoTour.css'
+import DataTour from "./assets/DataDetailTour"
+import './assets/Index.css'
 import { useParams } from "react-router-dom";
 import React, {useState , useEffect, useContext} from 'react'
-import FolderImage from '../img/FolderImg'
+import FolderImage from './img/FolderImg'
 import { useNavigate} from 'react-router-dom';
-import { DataContext } from "../../page/dataContext";
+import { DataContext } from "../page/dataContext";
 
 const dataHidden = DataTour.length - 3;
 
 function FotoTour (){
-    
     const {total, setTotal, setAmount, setDateBooking, InputLogin, setPaySukses} = useContext(DataContext)
-    
     const number = useParams("id")
     const navigate = useNavigate()
     const [calculation, setCalculation] = useState(1);
@@ -59,6 +57,7 @@ function FotoTour (){
 
                 <div className="mainFotoTour" style={{backgroundImage: `url(${DataTour[number.id].Image[0]})`}}></div>
                 <div className="imageFotoTour"> 
+
                 {DataTour[number.id].Image.slice(1, 4).map((image, index) => {
                     if (index === 2) {
                         return (
@@ -70,7 +69,8 @@ function FotoTour (){
                         );
                     }
                     })} 
-                    <p className="dataHidden">+{dataHidden}</p>
+                    
+                    <p className="dataHidden" style={{cursor:'pointer'}} onClick>+{dataHidden}</p>
                 </div>
             </Card>
 
@@ -88,6 +88,7 @@ function FotoTour (){
                     </div>
                 </div>
             )})}
+
             </div>
             <div className="description">
                 <p style={{fontSize:'18px', margin:'20px 0px 7px', fontWeight:'bold'}}>Description</p>

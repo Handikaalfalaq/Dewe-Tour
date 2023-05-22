@@ -3,7 +3,7 @@ import Index from "./page/Home"
 import DetailTour from './page/DetailTour'
 import PaymentPage from './page/Payment'
 import Profile from "./page/Profile"
-import Navbars from "./component/navbar/Navbar"
+import Navbars from "./component/Navbar"
 import Copyright from './component/Copyright';
 import { Container } from "react-bootstrap"
 import FolderImage from "./component/img/FolderImg"

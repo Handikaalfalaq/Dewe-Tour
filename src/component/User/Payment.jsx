@@ -1,22 +1,21 @@
 import FolderImage from "../img/FolderImg"
-import './payment.css'
-import DataTour from "../DataDetailTour"
+import '../assets/Index.css'
+import DataTour from '../assets/DataDetailTour'
 import { useParams } from "react-router-dom";
 import { DataContext } from "../../page/dataContext";
-import { useContext} from "react";
+import { useContext, useState} from "react";
+import Modal from 'react-bootstrap/modal';
 
 function Payment () {
-    window.scrollTo(0,0)
     const {total, amount, dateBooking, setDataBooking, paySukses, setPaySukses} = useContext(DataContext);
-
+    const [payModal, setPayModal] = useState(false);
+    
     const {id} = useParams()
-    
     const DataSlice = DataTour[id].InformationTrip.slice(0, 2).concat(DataTour[id].InformationTrip.slice(3))
-    
     const DataFilter = [DataSlice[3],DataSlice[2], DataSlice[0], DataSlice[1]]
     
     const handlePay = () => {
-        setPaySukses(true);
+        setPayModal(true);
         setDataBooking(
             { 
                 time : DataTour[id].Time,
@@ -27,6 +26,11 @@ function Payment () {
                 total : total,
             }
         );
+    }
+
+    const handleClosePopUp = () => {
+        setPayModal(false)
+        setPaySukses(true);
     }
 
     return (
@@ -98,9 +102,14 @@ function Payment () {
                     ): (
                         <button style={{height:'50px', width:'213px', backgroundColor:'#FFAF00', borderRadius:'4px', border:'0px', position:'absolute', bottom:'-78px', right:'0px'}} onClick={handlePay}>PAY</button>
                     )}
-
+                    
                 </div>
+                <Modal show={payModal} onHide={handleClosePopUp} display={{alignItems:'center'}}>
+                    <div style={{display:'flex', margin:'auto'}}>Yourpayment will be confirmed within 1 x 24 hours</div>
+                    <div style={{display:'flex', margin:'auto'}}>To see orders click <b style={{ margin: '0px 5px', cursor:'pointer' }} onClick={handleClosePopUp }> Here </b> thank your</div>
+                </Modal>
             </div>
+            
         </div>
     )
 }

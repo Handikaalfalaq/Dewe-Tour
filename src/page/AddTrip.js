@@ -1,4 +1,4 @@
-import AddTrip from "../component/AddTrip"
+import AddTrip from "../component/Admin/AddTrip"
 
 function AddTripForm () {
     return (

@@ -1,4 +1,5 @@
-import DataAdmin from "../DataAdmin"
+import DataAdmin from "../assets/DataAdmin"
+import '../assets/Index.css'
 
 const DataList = ["No", "Usert", "Trip", "Bukti Transfer", "Status Payment", "Action"]
 
@@ -16,17 +17,12 @@ function TransactionList (){
                 {DataAdmin.map((item,index) => {
                     return (
                         <div key={index} style={{display:"grid", gridTemplateColumns: "repeat(6, 1fr)", gridAutoRows: "auto"}}>
-                            <div style={{display: 'flex', alignItems: 'center', borderBottom:'1px solid black', height:'auto', padding:'5px 5px'}}>{item.No}</div>
-
-                            <div style={{display: 'flex', alignItems: 'center', borderBottom:'1px solid black', height:'auto', padding:'5px 5px'}}>{item.Users}</div>
-
-                            <div style={{display: 'flex', alignItems: 'center', borderBottom:'1px solid black', height:'auto', padding:'5px 5px'}}>{item.Trip}</div>
-
-                            <div style={{display: 'flex', alignItems: 'center', borderBottom:'1px solid black', height:'auto', padding:'5px 5px'}}>{item.BuktiTransfer}</div>
-
-                            <div style={{display: 'flex', alignItems: 'center', borderBottom:'1px solid black', height:'auto', padding:'5px 5px'}}>{item.StatusPayment}</div>
-
-                            <div style={{display: 'flex', alignItems: 'center', borderBottom:'1px solid black', height:'auto', padding:'5px 5px'}}>
+                            <div className="transactionLish">{item.No}</div>
+                            <div className="transactionLish">{item.Users}</div>
+                            <div className="transactionLish">{item.Trip}</div>
+                            <div className="transactionLish">{item.BuktiTransfer}</div>
+                            <div className="transactionLish">{item.StatusPayment}</div>
+                            <div className="transactionLish">
                                 <img src={item.Action} alt={item.Action} />
                                 </div>
                         </div>

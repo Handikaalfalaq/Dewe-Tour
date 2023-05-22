@@ -1,7 +1,6 @@
-import PersonalInfo from "../component/personalInfo/PersonalInfo"
+import PersonalInfo from "../component/User/PersonalInfo"
 import FolderImage from "../component/img/FolderImg"
-import HistoryTrip from "../component/historyTrip/HistoryTrip"
-// import Payment from "../component/payment/Payment"
+import HistoryTrip from "../component/User/HistoryTrip"
 
 function Profile () {
     return (
@@ -10,7 +9,6 @@ function Profile () {
           <img src={FolderImage.PalmLanding} alt="destination" style={{position:'absolute', left:'0px', top:'41%', zIndex:'1'}}/>
             <PersonalInfo/>
             <HistoryTrip/>
-            {/* <Payment/> */}
         </div>
     )
 }

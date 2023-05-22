@@ -1,9 +1,9 @@
 import { Container, Button, Form } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import './Home.css';
-import dataInformation from './dataInformation';
+import './assets/Index.css'
+import dataInformation from './assets/dataInformation';
 import CardGroup from 'react-bootstrap/CardGroup';
-import DataDetailTour from '../DataDetailTour'
+import DataDetailTour from './assets/DataDetailTour';
 import { useNavigate} from 'react-router-dom';
 
 

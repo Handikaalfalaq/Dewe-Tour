@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FotoTour from '../component/DetailTour/FotoDetailTour';
+import FotoTour from '../component/DetailTour';
 
 function DetailTour() {
     return (

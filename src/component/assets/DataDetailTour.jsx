@@ -1,4 +1,4 @@
-import FolderImage from "./img/FolderImg"
+import FolderImage from "../img/FolderImg"
 
 const DataTour = [
     {   

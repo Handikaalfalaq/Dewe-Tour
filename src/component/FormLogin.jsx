@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import FolderImage from '../img/FolderImg';
-import './formLogin.css'
+import FolderImage from './img/FolderImg';
+import './assets/Index.css'
 
 function FormLogin({getDatas, openRegister}) {
   const [inputEmail, setInputEmail] = useState('');
