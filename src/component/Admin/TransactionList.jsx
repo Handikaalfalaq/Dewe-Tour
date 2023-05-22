@@ -73,7 +73,7 @@ function TransactionList() {
                 </div>
                 <div>
                   <p style={{ fontSize: "24px", fontWeight: "bold", margin: "0px",  maxWidth: "370px"}} >
-                    {dataModalApprove[numberIndex].Time}{" "}  {dataModalApprove[numberIndex].Destination}
+                    {dataModalApprove[numberIndex].Trip }
                   </p>
 
                   <p style={{ fontSize: "14px", margin: "4px 0px 31px" }}>
