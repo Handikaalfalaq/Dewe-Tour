@@ -6,11 +6,14 @@ import React, {useState , useEffect, useContext} from 'react'
 import FolderImage from './img/FolderImg'
 import { useNavigate} from 'react-router-dom';
 import { DataContext } from "../page/dataContext";
-
+import Modal from 'react-bootstrap/modal';
+import Carousel from 'react-bootstrap/Carousel';
 const dataHidden = DataTour.length - 3;
 
 function FotoTour (){
     const {total, setTotal, setAmount, setDateBooking, InputLogin, setPaySukses} = useContext(DataContext)
+    const [modalImage, setmodalImage] = useState(false);
+
     const number = useParams("id")
     const navigate = useNavigate()
     const [calculation, setCalculation] = useState(1);
@@ -49,6 +52,15 @@ function FotoTour (){
         alert('Harus Login Terlebih Dahulu')
     }}
 
+    const handleOpenImage = () => {
+        setmodalImage(true)
+    }
+
+    const handleCloseImage = () => {
+        setmodalImage(false)
+    }
+
+
     return(
         <>
             <Card className="containerFotoTour">
@@ -70,9 +82,10 @@ function FotoTour (){
                     }
                     })} 
                     
-                    <p className="dataHidden" style={{cursor:'pointer'}} onClick>+{dataHidden}</p>
+                    <p className="dataHidden" style={{cursor:'pointer'}} onClick={handleOpenImage}> + {dataHidden}</p>
                 </div>
             </Card>
+
 
             <Card style={{padding:'0px 210px', borderRadius:'0px', maxWidth:'2040px', border:'0px', margin:'auto',backgroundColor:'transparent'}}>
             <p style={{margin:'47px 0px 10px', height:'24px', fontWeight:'bold'}}>Information Trip</p>
@@ -118,6 +131,20 @@ function FotoTour (){
                     <button className='buttonBooking' onClick={handleDouble}>BOOK NOW</button>
                 </div>
             </div>
+
+            <Modal show={modalImage} onHide={handleCloseImage} display={{alignItems:'center'}}>
+                <Carousel style={{ backgroundColor:'transparent', maxWidth:'3000px', display:'flex', flexDirection:'columb', }}>
+                
+                {DataTour[number.id].Image.map((image,index) => {
+                    return (
+                    <Carousel.Item interval={1000} key={index}>
+                        <div key={index} className="secondaryFotoTour" style={{ backgroundImage: `url(${image})`, backgroundSize:'cover', width:'500px', height:'400px', backgroundPosition: 'center', borderRadius:'10px'}}></div>
+                    </Carousel.Item>
+                    )
+                })}
+
+                </Carousel>
+            </Modal>
         </>
     )
 }

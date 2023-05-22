@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/navbar';
 import FolderImage from './img/FolderImg';
 import './assets/Index.css'
 import Modal from 'react-bootstrap/modal';
-import FormLogin from './FormLogin'
+import FormLogin from './FormLogin';
 import FormRegister from './FormRegister';
 import { DataContext } from "../page/dataContext";
 import { useNavigate } from 'react-router-dom';
@@ -14,18 +14,10 @@ import { useNavigate } from 'react-router-dom';
 
 function Navbars() {
   const navigate = useNavigate();
-  const {InputLogin, setInputLogin, InputLoginAdmin, setInputLoginAdmin, navbarProfile, setNavbarProfile} = useContext(DataContext)
+  const {InputLogin, setInputLogin, InputLoginAdmin, setInputLoginAdmin, navbarProfile, setNavbarProfile, appearancePay, setAppearancePay, dataBooking} = useContext(DataContext)
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
-  let appearancePay = false;
 
-
-  const value = 1
-  if ( value !== 1) {
-   appearancePay = true
-  } else {
-    appearancePay = false
-  }
 
   function getData(inputEmail, inputPassword) {
     if (inputEmail === 'customer@gmail.com') {
@@ -65,6 +57,7 @@ function Navbars() {
     setInputLogin(false);
     setInputLoginAdmin(false);
     setNavbarProfile(false);
+    setAppearancePay(false);
   }
 
   const handleOpenLoginModal = () => {
@@ -90,14 +83,14 @@ function Navbars() {
     <Navbar collapseOnSelect expand="lg" style={{ padding: '0px' }}>
         <Container style={{width:'1440px', position:'relative', padding: '0px' }}>
         {InputLoginAdmin === true ? (
-      <div onClick={() => navigate('/TransactionList')} style={{ cursor: 'pointer' }}>
-        <img src={FolderImage.Icon} alt="icon" style={{ height: '68px', zIndex: '3' }} />
-      </div>
-    ) : (
-      <div onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-        <img src={FolderImage.Icon} alt="icon" style={{ height: '68px', zIndex: '3' }} />
-      </div>
-    ) }
+          <div onClick={() => navigate('/TransactionList')} style={{ cursor: 'pointer' }}>
+            <img src={FolderImage.Icon} alt="icon" style={{ height: '68px', zIndex: '3' }} />
+          </div>
+        ) : (
+          <div onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+            <img src={FolderImage.Icon} alt="icon" style={{ height: '68px', zIndex: '3' }} />
+          </div>
+        ) }
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav style={{ position: 'absolute', right: '0px' , padding:'0px'}}>
@@ -106,14 +99,19 @@ function Navbars() {
               (InputLogin === true) ? (
                 <NavDropdown className='fotoprofil' style={{ backgroundImage: `url(${FolderImage.FotoProfil})`}}>
                   <NavDropdown.Item style={{ backgroundColor: 'white', borderRadius: '5px', padding: '20px 0px 20px'}}>
+                    
                     <div onClick={() => navigate('/profile')} style={{ textDecoration: 'none', color: 'black', paddingLeft: '30px', display:'flex', marginBottom: '15px'}}>
+
                     <div><img src={FolderImage.IconProfile} alt="icon profile" /> </div>
                       <div style={{marginLeft:'20px'}}>Profile</div>
                     </div>
                     
                     {appearancePay ? (
+                      
                       <div style={{ display:'flex', padding: '10px 0px 0px 30px', marginBottom: '30px', backgroundColor: 'white' }}>
-                        <div onClick={() => navigate('/Payment')} style={{ textDecoration: 'none', color: 'black' }} >
+
+                        <div onClick={() => navigate(`/Payment/${dataBooking.id}`)} style={{ display:'flex', textDecoration: 'none', color: 'black' }} >
+                          
                           <div><img src={FolderImage.Bill} alt="icon pay"/></div>
                           <div style={{marginLeft:'20px'}}>Pay</div>
                         </div>

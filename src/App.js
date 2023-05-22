@@ -22,10 +22,9 @@ function App() {
         <img src={FolderImage.PalmLanding} alt="destination" style={{position:'absolute', left:'0px', top:'41%', zIndex:'1'}}/>
         <Navbars/>  
         <Routes>
-          {/* <Route exact path="/" element={<PrivateRoute role="visitor"/>} > */}
-            <Route exact path="/" element={<Index/>} />
-            <Route exact path="/DetailTour/:id" element={<DetailTour/>} />
-          {/* </Route> */}
+
+          <Route exact path="/" element={<Index/>} />
+          <Route exact path="/DetailTour/:id" element={<DetailTour/>} />
           
           <Route exact path="/" element={<PrivateRoute role="user"/>} >
             <Route exact path="/" element={<Index/>} />

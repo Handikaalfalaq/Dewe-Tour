@@ -12,10 +12,11 @@ export const DataProvider = (children) => {
     const [Number, setNumber] = useState('');
     const [dataBooking, setDataBooking] = useState('');
     const [paySukses, setPaySukses] = useState(false)
+    const [appearancePay, setAppearancePay] = useState(false)
     
 
     return (
-        <DataContext.Provider value={{total, setTotal, amount, setAmount, dateBooking, setDateBooking, InputLogin, setInputLogin, dataBooking, setDataBooking, paySukses, setPaySukses, InputLoginAdmin, setInputLoginAdmin, navbarProfile, setNavbarProfile, Number, setNumber}}>
+        <DataContext.Provider value={{total, setTotal, amount, setAmount, dateBooking, setDateBooking, InputLogin, setInputLogin, dataBooking, setDataBooking, paySukses, setPaySukses, InputLoginAdmin, setInputLoginAdmin, navbarProfile, setNavbarProfile, Number, setNumber, appearancePay, setAppearancePay}}>
             {children.children}
         </DataContext.Provider>
     );

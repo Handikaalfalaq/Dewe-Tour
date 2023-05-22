@@ -7,7 +7,7 @@ import { useContext, useState} from "react";
 import Modal from 'react-bootstrap/modal';
 
 function Payment () {
-    const {total, amount, dateBooking, setDataBooking, paySukses, setPaySukses} = useContext(DataContext);
+    const {total, amount, dateBooking, setDataBooking, paySukses, setPaySukses, setAppearancePay} = useContext(DataContext);
     const [payModal, setPayModal] = useState(false);
     
     const {id} = useParams()
@@ -18,6 +18,7 @@ function Payment () {
         setPayModal(true);
         setDataBooking(
             { 
+                id : id,
                 time : DataTour[id].Time,
                 destination: DataTour[id].Destination ,
                 country: DataTour[id].Country,
@@ -29,6 +30,7 @@ function Payment () {
     }
 
     const handleClosePopUp = () => {
+        setAppearancePay(true)
         setPayModal(false)
         setPaySukses(true);
     }
@@ -105,8 +107,8 @@ function Payment () {
                     
                 </div>
                 <Modal show={payModal} onHide={handleClosePopUp} display={{alignItems:'center'}}>
-                    <div style={{display:'flex', margin:'auto'}}>Yourpayment will be confirmed within 1 x 24 hours</div>
-                    <div style={{display:'flex', margin:'auto'}}>To see orders click <b style={{ margin: '0px 5px', cursor:'pointer' }} onClick={handleClosePopUp }> Here </b> thank your</div>
+                    <div style={{display:'flex', margin:'auto', color:'green'}}>Yourpayment will be confirmed within 1 x 24 hours</div>
+                    <div style={{display:'flex', margin:'auto', color:'green'}}>To see orders click <b style={{ margin: '0px 5px', cursor:'pointer' }} onClick={handleClosePopUp }> Here </b> thank your</div>
                 </Modal>
             </div>
             

@@ -1,5 +1,6 @@
 import FolderImage from "../img/FolderImg"
 
+
 const DataTour = [
     {   
         InformationTrip : [
@@ -11,12 +12,12 @@ const DataTour = [
         ],
         QuotaMax : 14,
         QuotaFilled : 4,
-        Destination: "Great Holiday in Australia",
+        Destination: "Great Holiday in Australia", //
         Description: "Ayers Rock: Monolit merah spiritual Australia dengan pemandangan yang mengesankan.Fraser Island: Pulau pasir terbesar di dunia dengan hutan hujan yang eksotis dan danau biru kristal.Great Ocean Road: Rute perjalanan pantai yang menakjubkan dengan pemandangan tebing batu dan Apostles terkenal.Kakadu: Taman nasional yang luar biasa dengan air terjun spektakuler dan seni Aborigin yang kaya.Purnululu: Formasi batu pasir oranye yang unik, termasuk Bungle Bungle Range, menawarkan pemandangan yang memukau.",
         Country: "Australia",
-        Price: 12398000,
-        Date: "12/15",
-        Image: [FolderImage.AustraliaAyersRock,FolderImage.AustraliaFraserIsland, FolderImage.AustraliaGreatOceanGround, FolderImage.AustraliaKakadu, FolderImage.AustraliaPurnululu, FolderImage.AustraliaSydneyOperaHouseNight]
+        Price: 12398000, 
+        Date: "12/15", 
+        Image: [FolderImage.AustraliaAyersRock,FolderImage.AustraliaFraserIsland, FolderImage.AustraliaGreatOceanGround, FolderImage.AustraliaKakadu, FolderImage.AustraliaPurnululu, FolderImage.AustraliaSydneyOperaHouseNight],
     },
     {
        InformationTrip : [
@@ -104,6 +105,7 @@ const DataTour = [
         Image: [FolderImage.PapuaDanauPaniai, FolderImage.PapuaDanauSentani, FolderImage.PapuaDesaWisataSauwandarek, FolderImage.PapuaLembahBaliem, FolderImage.PapuaRajaAmpat, FolderImage.PapuaTamanNasionalTelukCendrawasih]
     },
 ]  
+
 
 export default DataTour
 

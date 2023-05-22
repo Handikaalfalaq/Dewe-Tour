@@ -1,8 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 
 function FormDisabledExample() {
-    window.scrollTo(0,0)
+    const navigate = useNavigate();
     return (
     <Form style={{padding:'108px 118px', position:'relative'}}>
         <div style={{fontSize:'36px', marginBottom:'42px'}}>Add Trip</div>
@@ -72,7 +73,7 @@ function FormDisabledExample() {
             <Form.Control type="file" />
         </Form.Group>
 
-      <Button type="submit"  style={{width:'150px', position:'absolute', left:'650px', bottom:'10px'}}>Submit</Button>
+      <Button type="submit" style={{width:'150px', position:'absolute', left:'650px', bottom:'10px', backgroundColor:'#FFAF00', border:'0px'}} onClick={() => navigate('/TransactionList')} >Submit</Button>
     </Form>
     );
 }
